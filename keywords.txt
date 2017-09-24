@@ -1,0 +1,10 @@
+shift7seg 		KEYWORD1
+
+numbers   		LITERAL1
+capital	  		LITERAL1
+lower     		LITERAL1
+blank     		LITERAL1
+
+blank_display	KEYWORD2
+err_display		KEYWORD2
+load_data		KEYWORD2
