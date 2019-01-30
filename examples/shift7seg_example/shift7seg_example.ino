@@ -1,23 +1,22 @@
 #include <shift7seg.h>
 
-shift7seg shift(8, 9, 10);
+shift7seg shift(8, 9, 10, 6);
 
-void setup()
-{
+void setup(){
 //nothing to do here
 }
 
-void loop()
-{
+void loop(){
   uint8_t i_leng = 10;
-  for (int q = 0; q < 4; q++)
-  {
-   uint8_t i[i_leng] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-  shift.load_data(i, i_leng);   //load an array of bytes, specifying how many bytes you'd like to display. if more than 4 bytes are loaded, the display scrolls through them.
-  
-  shift.load_data(shift.blank, shift.blank, shift.blank, shift.blank);      // load 4 predefined bytes, see shift7seg.h for a full list
-  
-  delay(500);
+  for (int q = 0; q < 4; q++){
+    uint8_t i[i_leng] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    shift.load_data(i, i_leng);
+    i[0] = blank;
+    i[1] = blank;
+    i[2] = blank;
+    i[3] = blank;
+    shift.load_rdata(i, 4);
+    delay(500);
   }
   
   delay(2000);
@@ -37,12 +36,11 @@ void loop()
   shift.blank_display();      //function to clear the display
   delay(200);
   
-  int x = 10000;        //displays an error when int are larger than 9999. this function wont scroll , use an array of bytes for that.
+  int x = 10000;
   shift.load_data(x);   // takes a single parameter (int)
 
   
-  for (int x = 0; x < 10000; x++)   
-  {
+  for (int x = 0; x < 10000; x++){
     shift.load_data(x);      //demonstrating how to load numbers 1 through 9999 using a single int variable.
     delay(50);
   }
