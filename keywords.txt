@@ -8,3 +8,5 @@ blank	LITERAL1
 blank_display	KEYWORD2
 err_display	KEYWORD2
 load_data	KEYWORD2
+load_rdata	KEYWORD2
+
