@@ -6,15 +6,13 @@
 class shift7seg{
 	public:
 		//constructor, choose pins to use as well as display size
-		shift7seg(const uint8_t _dataPin,
-		          const uint8_t _latchPin,
-						  const uint8_t _clkPin,
-							const uint8_t _num_digits);
+		shift7seg(const uint8_t _dataPin, const uint8_t _latchPin, const uint8_t _clkPin, const uint8_t _num_digits);
 
-		static const uint8_t numbers[10] =               // 7 segment values for decimals 0..9
+		static const uint8_t num_size = 10;
+		static const uint8_t numbers[num_size] =               // 7 segment values for decimals 0..9
 		{
 		//TRUTH TABLE    |   0 = segment on
-	  //ABCDEFGH       |   1 = segment off
+		//ABCDEFGH       |   1 = segment off
 		B00000011,  //0  |        A
 		B10011111,  //1  |      -----
 		B00100101,  //2  |   F |     | B
@@ -24,7 +22,7 @@ class shift7seg{
 		B01000001,  //6  |     |     |
 		B00011111,  //7  |      -----
 		B00000001,  //8  |        D
-		B00011001		//9  |
+		B00011001	//9  |
 		};
 
 		static const uint8_t capital[13] =
@@ -77,7 +75,7 @@ class shift7seg{
 		//the values of _data should all be chosen from lower[] and capital[]
 		//values that are not available become a blank space
 		void load_data(const char *_data, const uint8_t howMany = 1);
-		void load_data(const String _data, const uint8_t repeat = 1, const size_t howMany = 1, const uint8_t start = 0);
+		void load_data(const String _data, const uint8_t repeat = 1, size_t howMany = 1, const uint8_t start = 0);
 
 	private:
 		/*you can change this value, to whatever you want

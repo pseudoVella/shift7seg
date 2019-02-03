@@ -232,7 +232,7 @@ void shift7seg::load_data(const char *_data, const uint8_t howMany){
 	update_display();
 }
 
-void shift7seg::load_data(const String _data, const uint8_t repeat, const int howMany, const uint8_t start){
+void shift7seg::load_data(const String _data, const uint8_t repeat, size_t howMany, const uint8_t start){
 	uint8_t pos = 0;
 	uint8_t offset = 0;
 	uint8_t count = 0;
@@ -427,11 +427,40 @@ uint8_t shift7seg::convert_char(const char& OGchar){
 uint8_t shift7seg::convert_num(const uint8_t& OGnum){
 	uint8_t converted;
 
-	if(OGnum<10){
-		converted = numbers[OGnum];
-	}
-	else{
-		converted = blank;
+	switch(OGnum){
+		case 0:
+			converted = numbers[0];
+			break;
+		case 1:
+			converted = numbers[1];
+			break;
+		case 2:
+			converted = numbers[2];
+			break;
+		case 3:
+			converted = numbers[3];
+			break;
+		case 4:
+			converted = numbers[4];
+			break;
+		case 5:
+			converted = numbers[5];
+			break;
+		case 6:
+			converted = numbers[6];
+			break;
+		case 7:
+			converted = numbers[7];
+			break;
+		case 8:
+			converted = numbers[8];
+			break;
+		case 9:
+			converted = numbers[9];
+			break;
+		default:
+			converted = blank;
+			break;
 	}
 	return converted;
 }
