@@ -11,10 +11,7 @@ initial constructor for shift7seg library
 sets appropriate pins as outputs or inputs and prepares display for loading data
 ******************************************************************************************/
 
-shift7seg::shift7seg(const uint8_t _dataPin,
-										const uint8_t _latchPin,
-										const uint8_t _clkPin,
-										const uint8_t _num_digits){
+shift7seg::shift7seg(const uint8_t _dataPin, const uint8_t _latchPin, const uint8_t _clkPin, const uint8_t _num_digits){
 	dataPin = _dataPin;
 	latchPin = _latchPin;
 	clkPin = _clkPin;
@@ -57,7 +54,7 @@ void shift7seg::load_rdata(const uint8_t *_data, const uint8_t howMany){
 		}
 		if(pos < (howMany-1)){
 			offset = num_digits - 1;
-			while(pos<howmany){
+			while(pos<howMany){
 				update_display();
 				delay(500);
 				for(uint8_t b=0;b<offset;b++){
@@ -90,7 +87,7 @@ void shift7seg::load_data(const uint8_t *_data, const uint8_t howMany){
 		}
 		if(pos < (howMany-1)){
 			offset = num_digits - 1;
-			while(pos<howmany){
+			while(pos<howMany){
 				update_display();
 				delay(500);
 				for(uint8_t b=0;b<offset;b++){
@@ -221,7 +218,7 @@ void shift7seg::load_data(const char *_data, const uint8_t howMany){
 		}
 		if(pos < (howMany-1)){
 			offset = num_digits - 1;
-			while(pos<howmany){
+			while(pos<howMany){
 				update_display();
 				delay(500);
 				for(uint8_t b=0;b<offset;b++){
@@ -280,7 +277,7 @@ void shift7seg::load_data(const String _data, const uint8_t repeat, const int ho
 		}
 		if(pos < (howMany-1)){
 			offset = num_digits - 1;
-			while(pos<howmany){
+			while(pos<howMany){
 				update_display();
 				delay(500);
 				for(uint8_t b=0;b<offset;b++){
