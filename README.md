@@ -5,9 +5,9 @@ tested on an uno but should work on most avr boards.**
 created by Alex B. Vella sept 23, 2017
 
 - **constructor**
+  -shift7seg(uint8_t _data, uint8_t _latch, uint8_t _clock, uint8_t _num_digits) 
 	*declare pins for controlling 74hc595 shift registers
 	 declare number of digits for 7seg display*
-  -shift7seg(uint8_t _data, uint8_t _latch, uint8_t _clock, uint8_t _num_digits) 
 
 - **main functions**
   - load_data() *loads data into registers displaying it on our seven segment display. overloaded to handle 
