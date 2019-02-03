@@ -11,10 +11,10 @@ void loop(){
   for (int q = 0; q < 4; q++){
     uint8_t i[i_leng] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     shift.load_data(i, i_leng);
-    i[0] = blank;
-    i[1] = blank;
-    i[2] = blank;
-    i[3] = blank;
+    i[0] = shift.blank;
+    i[1] = shift.blank;
+    i[2] = shift.blank;
+    i[3] = shift.blank;
     shift.load_rdata(i, 4);
     delay(500);
   }
