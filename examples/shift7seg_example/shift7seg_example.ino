@@ -7,7 +7,7 @@ void setup(){
 }
 
 void loop(){
-  uint8_t i_leng = 10;
+  const uint8_t i_leng = 10;
   for (int q = 0; q < 4; q++){
     uint8_t i[i_leng] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     shift.load_data(i, i_leng);
